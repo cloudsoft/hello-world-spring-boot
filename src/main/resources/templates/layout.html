@@ -1,0 +1,30 @@
+<!--
+Created by IntelliJ IDEA.
+User: iuliana cosmina
+Date: 2020-05-24
+Time: 11:43
+-->
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" th:with="lang=${#locale.language}" th:lang="${lang}">
+<head th:fragment="head(title)">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title th:text="${title}"> Layout Page </title>
+    <link rel="stylesheet" type="text/css" th:href="@{/resources/css/style.css}" >
+</head>
+<body>
+<div id="main">
+    <div class="header" id="header" th:fragment="header">
+        <div class="header_text">
+            <h1>Sample Brooklyn Deployed "Hello, World" Application</h1>
+        </div>
+    </div>
+
+    <div class="container">
+    </div><!--end of center content-->
+
+    <div class="footer" id="footer" th:fragment="footer">
+    </div><!--end of footer content-->
+
+</div>
+</body>
+</html>

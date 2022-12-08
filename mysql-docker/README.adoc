@@ -1,3 +1,0 @@
-docker build -t amp-mysql:1.0 .
-
-docker run --name local-mariadb -d -p 3306:3306 amp-mysql:1.0
