@@ -20,10 +20,16 @@ To run locally:
 java -jar target/hello-world-spring-boot-0.0.1.jar
 ```
 
-To run on a VM or Docker container:
+To run on a VM or Docker container, without a database:
 
 ```shell
-nohup java -jar  target/hello-world-spring-boot-0.0.1.jar server.log 2>&1 &
+nohup java -jar  target/hello-world-spring-boot-0.0.1.jar server.log 2>&1  --spring.profiles.active=local&
+```
+
+To run on a VM or Docker container, with a remote database:
+
+```shell
+nohup java -jar  target/hello-world-spring-boot-0.0.1.jar server.log 2>&1  --spring.profiles.active=remote&
 ```
 
 ## Set Up Port Forwarding
