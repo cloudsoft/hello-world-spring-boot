@@ -24,15 +24,15 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class BrooklynHelloWorldApplication extends SpringBootServletInitializer {
+public class HelloWorldApplication extends SpringBootServletInitializer {
 
 	public static void main (String...args){
-		SpringApplication.run(BrooklynHelloWorldApplication.class, args);
+		SpringApplication.run(HelloWorldApplication.class, args);
 	}
 
 	@Override
 	protected SpringApplicationBuilder configure (SpringApplicationBuilder builder){
-		return builder.sources(BrooklynHelloWorldApplication.class);
+		return builder.sources(HelloWorldApplication.class);
 	}
 }
 

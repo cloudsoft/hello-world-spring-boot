@@ -24,38 +24,39 @@ body{
 	margin: 0;
 }
 #main{
+	background: url('../images/BrooklynBridge3Large.png') no-repeat fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 	height: 100vh;
-	background: #6BB445 url('../images/BrooklynBridge3Large.png') no-repeat fixed;
+	background-color: #6BB445;
 }
 #header{
 	text-align: center;
 }
 h1{
 	font-family: "open sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
-    text-transform: uppercase;
-    line-height: 105%;
-    letter-spacing: 1px;
-    font-weight: bold;
-    text-align: center;
-    margin: 20px 0 15px;
-    margin: 0;
-    padding-top: 20vh;
+	text-transform: uppercase;
+	line-height: 105%;
+	letter-spacing: 1px;
+	font-weight: bold;
+	text-align: center;
+	margin: 20px 0 15px;
+	margin: 0;
+	padding-top: 20vh;
 }
 #container{
 	padding-top: 30vh;
 	text-align: center;
 	line-height: 140%;
-    font-family: "Noto Serif","open sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
-    font-weight: normal;
-    color: white;
-    text-shadow: #000 0px 0px 5px,   #000 0px 0px 5px,   #000 0px 0px 5px,
+	font-family: "Noto Serif","open sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+	font-weight: normal;
+	color: white;
+	text-shadow: #000 0px 0px 5px,   #000 0px 0px 5px,   #000 0px 0px 5px,
 	#000 0px 0px 5px,   #000 0px 0px 5px,   #000 0px 0px 5px;
-    font-style: italic;
-    margin-bottom: 45px;
+	font-style: italic;
+	margin-bottom: 45px;
 	width: 80%;
 	margin-left: 10%;
 }

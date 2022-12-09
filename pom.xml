@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.apache.brooklyn.example</groupId>
-	<artifactId>brooklyn-example-hello-world-spring-boot</artifactId>
+	<artifactId>hello-world-spring-boot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>brooklyn-example-hello-world-spring-boot</name>
+	<name>Hello World (Spring Boot)</name>
 	<description>Apache Brooklyn demo project for Spring Boot</description>
 	<properties>
 		<java.version>19</java.version>
@@ -44,14 +44,19 @@
 	</dependencies>
 
 	<build>
+		<defaultGoal>clean install</defaultGoal>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>3.0.0</version>
-				<configuration>
-					<classifier>exec</classifier>
-				</configuration>
+				<executions>
+					<execution>
+						<configuration>
+							<mainClass>org.apache.brooklyn.example.HelloWorldApplication</mainClass>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
