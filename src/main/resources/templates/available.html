@@ -19,6 +19,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Sample "Hello, World" Application</title>
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body bgcolor=white>
 
@@ -28,8 +29,9 @@
             <img src="images/bridge-small.png">
         </td>
         <td>
-            <h1>Sample TOSCA Brooklyn Deployed "Hello, World" Application</h1>
-            <p>This is the home page for a sample application used to illustrate how web applications can be deployed to multi-cloud environments using Brooklyn and CAMP blueprints.
+            <h1>Sample Brooklyn Deployed "Hello, World" Application</h1>
+            <p>This is the home page for a sample application used to illustrate
+                how web applications can be deployed to multi-cloud environments using Brooklyn.
         </td>
     </tr>
 </table>
@@ -39,7 +41,7 @@
 <p>
 
 <ul>
-    <li> <a th:href="@{/db.html}">SQL database chatroom</a></li>
+    <li> <a th:href="@{/db}">SQL database chatroom with <span th:text="${database}"/> </a></li>
 </ul>
 
 </body>

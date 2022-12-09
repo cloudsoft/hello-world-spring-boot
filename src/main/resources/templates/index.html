@@ -22,14 +22,16 @@ under the License.
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<title>Sample "Hello, World" Application</title>
-	<link rel="stylesheet" type="text/css" href="styles/main.css">
+	<link rel="stylesheet" type="text/css" th:href="@{/styles/main.css}">
+	<link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
 <div id="main">
 
 	<div id="header">
 		<div class="header_text">
-			<h1>Sample Brooklyn Deployed "Hello, World" Application</h1>
+			<h1> <span class="alert alert-info" role="alert" th:text="'Hello World Application at ' + ${time}"></span>
+				</h1>
 		</div>
 	</div>
 
@@ -37,7 +39,7 @@ under the License.
 		<div class="text_row">
 			<div class="app_info"><h3>This is the home page for a sample application used to illustrate
 				how web applications can be deployed to multi-cloud environments using Brooklyn. </h3></div>
-			<div class="illustrations"><p>See the available illustrations <a th:href="@{/available.html}">here</a>.</p></div>
+			<div class="illustrations"><p>See the available illustrations <a th:href="@{/available}">here</a>.</p></div>
 		</div>
 	</div>
 

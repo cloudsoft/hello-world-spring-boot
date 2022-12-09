@@ -23,14 +23,20 @@ java -jar target/hello-world-spring-boot-0.0.1.jar
 To run on a VM or Docker container, without a database:
 
 ```shell
-nohup java -jar  target/hello-world-spring-boot-0.0.1.jar server.log 2>&1  --spring.profiles.active=local&
+nohup java -jar target/hello-world-spring-boot-0.0.1.jar --spring.profiles.active=local >> server.log 2>&1 &
 ```
 
 To run on a VM or Docker container, with a remote database:
 
 ```shell
-nohup java -jar  target/hello-world-spring-boot-0.0.1.jar server.log 2>&1  --spring.profiles.active=remote&
+nohup java -jar target/hello-world-spring-boot-0.0.1.jar --spring.profiles.active=remote --DB_IP=X.X.X.X --DB_USER=brooklyn --DB_PASS=br00k11n >> server.log 2>&1 &
 ```
+
+If not present:
+
+* `DB_IP` defaults to `localhost`
+* `DB_USER` defaults to `brooklyn`
+* `DB_PASS` defaults to `br00k11n`
 
 ## Set Up Port Forwarding
 
@@ -42,6 +48,5 @@ sudo iptables -t nat -vnL
 
 ## What's Next
 
-1. Configure DB support
-2. Make DB configurable (maybe separate builds fot MariaDB and PostgreSQL ?)
-3. {Your Proposal here} (Please contribute!)
+1. Make DB configurable (use profiles to separate dependencies for each database type, currently we support H2 and MariaDB)
+2. {Your Proposal here} (Please contribute!)

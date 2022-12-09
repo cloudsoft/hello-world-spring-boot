@@ -1,44 +1,87 @@
 
+<html>
 <!--
-Licensed to the Apache Software Foundation (ASF) under one
-or more contributor license agreements.  See the NOTICE file
-distributed with this work for additional information
-regarding copyright ownership.  The ASF licenses this file
-to you under the Apache License, Version 2.0 (the
-"License"); you may not use this file except in compliance
-with the License.  You may obtain a copy of the License at
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
 
- http://www.apache.org/licenses/LICENSE-2.0
+     http://www.apache.org/licenses/LICENSE-2.0
 
-Unless required by applicable law or agreed to in writing,
-software distributed under the License is distributed on an
-"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, either express or implied.  See the License for the
-specific language governing permissions and limitations
-under the License.
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
 -->
-
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Sample "Hello, World" Application</title>
-    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <title>Sample Application Database JSP Page</title>
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
-<body>
-<div id="main">
+<body bgcolor=white>
 
-    <div id="header">
-        <div class="header_text">
-            <h1>Database Chat application</h1>
+<table border="0">
+    <tr>
+        <td align=center>
+            <img src="images/bridge-small.png">
+        </td>
+        <td>
+            <h1>Sample Brooklyn Deployed WebApp</h1>
+            This is a Thymeleaf template that is part of the Hello, World application,
+            deployed by Brooklyn, to show <b>SQL database interactivity</b>.
+        </td>
+    </tr>
+</table>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+    <form action="#" th:action="@{/db/addmessage}" th:object="${message}" method="post">
+        <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" th:field="*{name}" id="name" placeholder="Name">
+        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+        </div>
+        <div class="form-group">
+        <label for="message">Message</label>
+        <input type="text" class="form-control" th:field="*{message}" id="message" placeholder="Message">
+        <span th:if="${#fields.hasErrors('message')}" th:errors="*{message}"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+            </div>
+        </div>
+</div>
+
+<div th:switch="${messages}" class="container my-5">
+    <div class="row">
+        <div class="col-md-8">
+            <h2 th:case="null">No messages yet!</h2>
+            <div th:case="*">
+                <h2 class="my-5">Messages</h2>
+                <table class="table table-striped table-responsive-md">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Message</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="m : ${messages}">
+                        <td th:text="${m.name}"></td>
+                        <td th:text="${m.message}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
         </div>
     </div>
-
-    <div id="container">
-        <div class="text_row">
-            <div class="app_info"> TBC </div>
-        </div>
-    </div>
-
 </div>
 </body>
+
 </html>

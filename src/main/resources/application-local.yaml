@@ -5,7 +5,8 @@ logging:
     console: "%-5level: %class{0} - %msg%n"
   level:
     root: INFO
-    org.springframework.boot: INFO
+    org.springframework.boot: DEBUG
+    org.springframework: DEBUG
     com.apache.brooklyn.example: INFO
 
 server:

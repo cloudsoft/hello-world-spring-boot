@@ -1,8 +1,8 @@
 use visitors;
 
-CREATE TABLE MESSAGES (
+CREATE TABLE messages (
                           id BIGINT NOT NULL AUTO_INCREMENT,
-                          NAME VARCHAR(30) NOT NULL,
-                          MESSAGE VARCHAR(400) NOT NULL,
+                          name VARCHAR(30) NOT NULL,
+                          message VARCHAR(400) NOT NULL,
                           PRIMARY KEY (ID)
 );
