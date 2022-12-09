@@ -13,5 +13,5 @@ mvn clean install
 To run, run 
 
 ```shell
-java -jar target/hello-world-spring-boot-0.0.1-SNAPSHOT.jar
+java -jar target/hello-world-spring-boot-0.0.1.jar
 ```

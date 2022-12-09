@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>org.apache.brooklyn.example</groupId>
 	<artifactId>hello-world-spring-boot</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>Hello World (Spring Boot)</name>
 	<description>Apache Brooklyn demo project for Spring Boot</description>
 	<properties>
