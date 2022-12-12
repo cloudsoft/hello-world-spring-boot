@@ -1,3 +1,4 @@
+-- 1.0.0 version
 use visitors;
 
 CREATE TABLE messages (
