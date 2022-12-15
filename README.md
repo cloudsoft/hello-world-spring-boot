@@ -17,26 +17,31 @@ mvn clean install
 To run locally:
 
 ```shell
-java -jar target/hello-world-spring-boot-1.0.1.jar
+java -jar target/hello-world.jar
 ```
 
 To run on a VM or Docker container, without a database:
 
 ```shell
-nohup java -jar target/hello-world-spring-boot-1.0.1.jar --spring.profiles.active=local >> server.log 2>&1 &
+nohup java -jar target/hello-world.jar --spring.profiles.active=local >> server.log 2>&1 &
 ```
 
 To run on a VM or Docker container, with a remote database:
 
 ```shell
-nohup java -jar target/hello-world-spring-boot-1.0.1.jar --spring.profiles.active=remote --DB_IP=X.X.X.X --DB_USER=brooklyn --DB_PASS=br00k11n >> server.log 2>&1 &
+nohup java -jar target/hello-world.jar --spring.profiles.active=remote --server.port=XXXX --DB_IP=X.X.X.X --DB_PORT=XXXX --DB_USER=brooklyn --DB_PASS=br00k11n >> server.log 2>&1 &
 ```
 
 If not present:
 
-* `DB_IP` defaults to `localhost`
+* `spring.profiles.active` defaults to `local` (thus all `DB_*` properties will be ignored)
+* `server.port` defaults to `8080`
+* `DB_IP` defaults to `localhost` (requires a MariaDB containter running on your Docker Runtime, built with the contents if the `mariadb-docker` directory)
+* `DB_PORT` defaults to `3306`
 * `DB_USER` defaults to `brooklyn`
 * `DB_PASS` defaults to `br00k11n`
+
+**NOTE:** If you want to use different values for `DB_USER` and `DB_PASS` modify the `creation-script-mariadb.sql` too before running it.
 
 ## Set Up Port Forwarding
 

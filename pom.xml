@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>org.apache.brooklyn.example</groupId>
 	<artifactId>hello-world-spring-boot</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 	<name>Hello World (Spring Boot)</name>
 	<description>Apache Brooklyn demo project for Spring Boot</description>
 	<properties>
@@ -62,6 +62,7 @@
 
 	<build>
 		<defaultGoal>clean install</defaultGoal>
+		<finalName>hello-world</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
