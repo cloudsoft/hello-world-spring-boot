@@ -2,6 +2,13 @@
 
 Requires JDK version 19 - any distribution works.
 
+## Download Releases
+
+Dynamic links for downloading files:
+
+https://github.com/cloudsoft/hello-world-spring-boot/releases/latest/download/hello-world.jar
+https://github.com/cloudsoft/hello-world-spring-boot/releases/latest/download/creation-script-mariadb.sql
+
 ## Build
 
 To build run:
