@@ -17,19 +17,19 @@ mvn clean install
 To run locally:
 
 ```shell
-java -jar target/hello-world-spring-boot-1.0.0.jar
+java -jar target/hello-world-spring-boot-1.0.1.jar
 ```
 
 To run on a VM or Docker container, without a database:
 
 ```shell
-nohup java -jar target/hello-world-spring-boot-1.0.0.jar --spring.profiles.active=local >> server.log 2>&1 &
+nohup java -jar target/hello-world-spring-boot-1.0.1.jar --spring.profiles.active=local >> server.log 2>&1 &
 ```
 
 To run on a VM or Docker container, with a remote database:
 
 ```shell
-nohup java -jar target/hello-world-spring-boot-1.0.0.jar --spring.profiles.active=remote --DB_IP=X.X.X.X --DB_USER=brooklyn --DB_PASS=br00k11n >> server.log 2>&1 &
+nohup java -jar target/hello-world-spring-boot-1.0.1.jar --spring.profiles.active=remote --DB_IP=X.X.X.X --DB_USER=brooklyn --DB_PASS=br00k11n >> server.log 2>&1 &
 ```
 
 If not present:
