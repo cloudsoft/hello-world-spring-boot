@@ -18,6 +18,7 @@
  */
 package org.apache.brooklyn.example;
 
+import io.micrometer.core.annotation.Timed;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,12 +33,14 @@ public class ApplicationController {
     @Value("${spring.datasource.driverClassName}")
     private String dbDriver;
 
+    @Timed(value = "index.time", description = "Time taken to return index page")
     @GetMapping(path = {"/", "/index"})
     public String index(Model model) {
         model.addAttribute("time", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")));
         return "index"; //view
     }
 
+    @Timed(value = "available.time", description = "Time taken to return available page")
     @GetMapping("available")
     public String available(Model model) {
         if (dbDriver.contains("h2")) {

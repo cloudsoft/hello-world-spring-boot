@@ -18,15 +18,23 @@
  */
 package org.apache.brooklyn.example;
 
+import io.micrometer.core.aop.TimedAspect;
+import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.context.annotation.Bean;
 
 import java.io.Serial;
 
 @SpringBootApplication
 public class HelloWorldApplication extends SpringBootServletInitializer {
+
+	@Bean
+	public TimedAspect timedAspect(MeterRegistry registry) {
+		return new TimedAspect(registry);
+	}
 
 	public static void main (String...args){
 		SpringApplication.run(HelloWorldApplication.class, args);

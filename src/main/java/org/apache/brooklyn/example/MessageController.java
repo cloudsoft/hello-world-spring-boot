@@ -1,5 +1,6 @@
 package org.apache.brooklyn.example;
 
+import io.micrometer.core.annotation.Timed;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -22,6 +23,7 @@ public class MessageController {
         this.messageRepo = messageRepo;
     }
 
+    @Timed(value = "db.time", description = "Time taken to return db page")
     @GetMapping
     public String db(){
         return "db"; // view;
@@ -29,6 +31,7 @@ public class MessageController {
 
     @ModelAttribute("messages")
     public List<Message> messages(){
+
         if(messageRepo.count() == 0) {
             return null;
         } else {
@@ -40,6 +43,7 @@ public class MessageController {
         return new Message();
     }
 
+    @Timed(value = "db.post.time", description = "Time taken to post a message")
     @PostMapping("/addmessage")
     public String addMessage(@Valid @ModelAttribute  Message message, BindingResult result){
         if (result.hasErrors()) {
